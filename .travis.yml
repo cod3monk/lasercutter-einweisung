@@ -7,7 +7,10 @@ before_install:
 addons:
     apt:
         packages:
-            - texlive texlive-lang-german texlive-latex-recommended texlive-latex-extra
+            - texlive
+            - texlive-lang-german
+            - texlive-latex-recommended
+            - texlive-latex-extra
             - tree
 env:
     GH_REF: github.com/cod3monk/lasercutter-einweisung.git
