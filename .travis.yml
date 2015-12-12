@@ -9,7 +9,7 @@ addons:
     - texlive-full
     - tree
 env:
-  GH_REF: cod3monk/lasercutter-einweisung.git
+    - GH_REF=cod3monk/lasercutter-einweisung.git
 script:
 - make
 - ./deploy_to_gh-pages.sh

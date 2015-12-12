@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+echo git clone "git@github.com:${GH_REF}" -b gh-pages gh-pages
 GIT_SSH_COMMAND="ssh -i deploy_key" git clone "git@github.com:${GH_REF}" -b gh-pages gh-pages
 cp output/* gh-pages/
 cd gh-pages/
