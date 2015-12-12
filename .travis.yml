@@ -1,16 +1,18 @@
 git:
-    submodules: false
-# Use sed to replace the SSH URL with the public URL, then initialize submodules
+  submodules: false
 before_install:
-    - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
-    - git submodule update --init --recursive
+- sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+- git submodule update --init --recursive
 addons:
-    apt:
-        packages:
-            - texlive-full
-            - tree
+  apt:
+    packages:
+    - texlive-full
+    - tree
 env:
-    GH_REF: github.com/cod3monk/lasercutter-einweisung.git
+  GH_REF: github.com/cod3monk/lasercutter-einweisung.git
 script:
-    - make
-    - ./deploy_to_gh-pages.sh
+- make
+- ./deploy_to_gh-pages.sh
+dd:
+- openssl aes-256-cbc -K $encrypted_fbff2d7a8104_key -iv $encrypted_fbff2d7a8104_iv
+  -in deploy_key.enc -out deploy_key -d
